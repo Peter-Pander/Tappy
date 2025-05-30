@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm55awt40lsd4"]
+
+[ext_resource type="PackedScene" uid="uid://bteu74oxualif" path="res://Scenes/Laser/Laser.tscn" id="1_cd7t7"]
+[ext_resource type="PackedScene" uid="uid://b15k35q30ig5r" path="res://Scenes/Pipe/Pipe.tscn" id="2_nqmk8"]
+
+[node name="Pipes" type="Node2D"]
+
+[node name="Laser" parent="." instance=ExtResource("1_cd7t7")]
+
+[node name="Lower" parent="." instance=ExtResource("2_nqmk8")]
+position = Vector2(0, 80)
+
+[node name="Upper" parent="." instance=ExtResource("2_nqmk8")]
+position = Vector2(0, -80)
+rotation = 3.14159
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(152, 0)
