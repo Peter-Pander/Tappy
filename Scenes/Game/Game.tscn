@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnghy4durt210"]
+[gd_scene load_steps=4 format=3 uid="uid://dnghy4durt210"]
 
 [ext_resource type="Texture2D" uid="uid://bo5jjmdduqm1p" path="res://assets/background/rocks_2.png" id="1_rdw05"]
 [ext_resource type="PackedScene" uid="uid://ph3wxou8gdsq" path="res://Scenes/Plane/Plane.tscn" id="2_gwu2e"]
 [ext_resource type="PackedScene" uid="uid://cafxf35lsiggm" path="res://Scenes/Barrier/Barrier.tscn" id="3_xbxml"]
-[ext_resource type="PackedScene" uid="uid://dm55awt40lsd4" path="res://Scenes/Pipes/Pipes.tscn" id="4_ln2h6"]
 
 [node name="Game" type="Node2D"]
 
@@ -16,5 +15,14 @@ position = Vector2(82, 457)
 
 [node name="Barrier" parent="." instance=ExtResource("3_xbxml")]
 
-[node name="Pipes" parent="." instance=ExtResource("4_ln2h6")]
-position = Vector2(383, 288)
+[node name="PipesHolder" type="Node" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="UpperPoint" type="Marker2D" parent="."]
+position = Vector2(574, 285)
+
+[node name="LowerPoint" type="Marker2D" parent="."]
+position = Vector2(574, 650)
