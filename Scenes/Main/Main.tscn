@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxyp0pfdnfkgm"]
+
+[ext_resource type="Texture2D" uid="uid://dmn7r8xxm2gvf" path="res://assets/background/sky.png" id="1_p8rbg"]
+[ext_resource type="LabelSettings" uid="uid://qvlbrrln83ue" path="res://Resources/red_title_96.tres" id="2_cmk6n"]
+[ext_resource type="LabelSettings" uid="uid://b38ggl21mi7y8" path="res://Resources/red_title_32.tres" id="3_cmk6n"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p8rbg")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="TitleLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "TAPPY"
+label_settings = ExtResource("2_cmk6n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreText" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Highscore"
+label_settings = ExtResource("3_cmk6n")
+
+[node name="HighScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "0000"
+label_settings = ExtResource("3_cmk6n")
+horizontal_alignment = 2
