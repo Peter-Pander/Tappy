@@ -1,7 +1,15 @@
 extends CharacterBody2D
 
 
+class_name Tappy
+
+
+signal on_plane_died
+
+
 const JUMP_POWER: float = -350.0
+
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -33,3 +41,4 @@ func fly(delta: float) -> void:
 func die() -> void:
 	animated_sprite_2d.stop()
 	set_physics_process(false)
+	on_plane_died.emit()
