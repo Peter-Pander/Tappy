@@ -20,6 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Exit"):
 		GameManager.load_main_scene()
 	elif _can_press == true and event.is_action_pressed("jump"):
+		ScoreManager.high_score = _score
 		GameManager.load_main_scene()
 
 func _enter_tree() -> void:
