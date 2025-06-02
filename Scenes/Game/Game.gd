@@ -7,11 +7,15 @@ const PIPES = preload("res://Scenes/Pipes/Pipes.tscn")
 @onready var upper_point: Marker2D = $UpperPoint
 @onready var lower_point: Marker2D = $LowerPoint
 
-		
-		
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_pipes()
+
+
+func _enter_tree() -> void:
+	SignalHub.on_plane_died.connect(_on_plane_died)
 
 
 func spawn_pipes() -> void:

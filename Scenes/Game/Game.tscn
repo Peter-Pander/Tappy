@@ -34,5 +34,4 @@ position = Vector2(509, 650)
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("5_y3kpf")]
 
-[connection signal="on_plane_died" from="Plane" to="." method="_on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
