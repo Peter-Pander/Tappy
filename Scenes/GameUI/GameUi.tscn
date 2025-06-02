@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0de2gwexw85"]
+
+[ext_resource type="LabelSettings" uid="uid://b38ggl21mi7y8" path="res://Resources/red_title_32.tres" id="1_diq3n"]
+[ext_resource type="Script" uid="uid://bnyk6c4qq1t2o" path="res://Scenes/GameUI/GameUi.gd" id="1_iq8cv"]
+[ext_resource type="LabelSettings" uid="uid://qypqlcqy1l7d" path="res://Resources/white_title_48.tres" id="2_81r78"]
+[ext_resource type="LabelSettings" uid="uid://d1cv0uudu78ox" path="res://Resources/red_title_72.tres" id="3_556m7"]
+
+[node name="GameUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iq8cv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "0000"
+label_settings = ExtResource("1_diq3n")
+
+[node name="PressSpaceLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -11.5
+offset_right = 45.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Space"
+label_settings = ExtResource("2_81r78")
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = ExtResource("3_556m7")
