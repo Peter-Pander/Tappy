@@ -1,10 +1,14 @@
 extends Control
 
 
+const GAME_OVER = preload("res://assets/audio/game_over.wav")
+
+
 @onready var score_label: Label = $MarginContainer/ScoreLabel
 @onready var game_over_label: Label = $GameOverLabel
 @onready var press_space_label: Label = $PressSpaceLabel
 @onready var timer: Timer = $Timer
+@onready var sound: AudioStreamPlayer = $Sound
 
 
 var _can_press: bool = false
@@ -29,10 +33,14 @@ func _enter_tree() -> void:
 
 
 func on_plane_died() -> void:
+	sound.stop()
+	sound.stream = GAME_OVER
+	sound.play()
 	game_over_label.show()
 	timer.start()
 
 func on_point_scored() -> void:
+	sound.play()
 	_score += 1
 	score_label.text = "%04d" % _score
 

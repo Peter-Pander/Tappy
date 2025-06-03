@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://l0de2gwexw85"]
+[gd_scene load_steps=6 format=3 uid="uid://l0de2gwexw85"]
 
 [ext_resource type="LabelSettings" uid="uid://b38ggl21mi7y8" path="res://Resources/red_title_32.tres" id="1_diq3n"]
 [ext_resource type="Script" uid="uid://bnyk6c4qq1t2o" path="res://Scenes/GameUI/GameUi.gd" id="1_iq8cv"]
 [ext_resource type="LabelSettings" uid="uid://qypqlcqy1l7d" path="res://Resources/white_title_48.tres" id="2_81r78"]
 [ext_resource type="LabelSettings" uid="uid://d1cv0uudu78ox" path="res://Resources/red_title_72.tres" id="3_556m7"]
+[ext_resource type="AudioStream" uid="uid://dglj41lb8wjoo" path="res://assets/audio/score.wav" id="5_jwnss"]
 
 [node name="GameUI" type="Control"]
 process_mode = 3
@@ -64,5 +65,8 @@ label_settings = ExtResource("3_556m7")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.766
 one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jwnss")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

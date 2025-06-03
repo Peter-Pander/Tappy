@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ph3wxou8gdsq"]
+[gd_scene load_steps=12 format=3 uid="uid://ph3wxou8gdsq"]
 
 [ext_resource type="Texture2D" uid="uid://d2a7gyh0omn7m" path="res://assets/plane/planes_sheet.png" id="1_c1i0r"]
 [ext_resource type="Script" uid="uid://dgvlwdqdix4tp" path="res://Scenes/Plane/Plane.gd" id="1_p0ear"]
+[ext_resource type="AudioStream" uid="uid://ck48hgsmn2lm4" path="res://assets/audio/engine.mp3" id="3_kvaiv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0ear"]
 atlas = ExtResource("1_c1i0r")
@@ -94,3 +95,8 @@ root_node = NodePath("../AnimatedSprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_kvaiv")
 }
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kvaiv")
+volume_db = -5.0
+autoplay = true
